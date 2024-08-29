@@ -1,0 +1,7 @@
+header {
+  h1 {
+    padding-block: 40px;
+    margin-inline: auto;
+    width: fit-content;
+  }
+}

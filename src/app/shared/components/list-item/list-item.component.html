@@ -1,0 +1,34 @@
+<li [ngClass]="{
+'hide': isDeleted
+}" class="list-item">
+  <app-checkbox [checked]="checked" [id]="id"></app-checkbox>
+  @if (editMode) {
+    <form (ngSubmit)="saveChanges()">
+      <input type="text"
+             name="title"
+             placeholder="Введите задачу"
+             [defaultValue]="title"
+             [formControl]="titleControl!"
+      />
+      <span *ngIf="errorMessage" class="error">{{ errorMessage }}</span>
+    </form>
+    <div class="actions">
+      <button (click)="saveChanges()" type="submit" class="save-btn">
+        <svg-icon src="/svg/done.svg"></svg-icon>
+      </button>
+      <button (click)="toggleEditMode()" type="reset" class="close-btn">
+        <svg-icon src="/svg/cross.svg"></svg-icon>
+      </button>
+    </div>
+  } @else {
+    <p>{{ title }}</p>
+    <div class="actions">
+      <button (click)="toggleEditMode()" class="edit-btn">
+        <svg-icon src="/svg/pen.svg"></svg-icon>
+      </button>
+      <button (click)="deleteTodo()" class="delete-btn">
+        <svg-icon src="/svg/trash.svg"></svg-icon>
+      </button>
+    </div>
+  }
+</li>

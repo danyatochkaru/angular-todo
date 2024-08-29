@@ -1,0 +1,4 @@
+<div class="checkbox">
+  <input [formControl]="checkedControl" type="checkbox"/>
+  <div (click)="checkedControl.setValue(!checkedControl.value)"><span *ngIf="checkedControl.value">✓</span></div>
+</div>

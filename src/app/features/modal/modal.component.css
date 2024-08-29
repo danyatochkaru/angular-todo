@@ -1,0 +1,92 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-black);
+  opacity: .7;
+}
+
+.form {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-black);
+  padding: 18px 30px;
+  border-radius: 16px;
+  border: 1px solid var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  input {
+    width: 440px;
+
+    margin-block: 25px;
+
+    background: inherit;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    border: 1px solid var(--color-white);
+    border-radius: 5px;
+    padding: 12px 16px;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      font-family: inherit;
+      font-weight: normal;
+      font-size: 18px;
+
+      &.apply {
+        background: var(--color-brand);
+        color: var(--color-white);
+        border: none;
+      }
+
+      &.cancel {
+        background: var(--color-black);
+        color: var(--color-brand);
+        border: 1px solid var(--color-brand);
+      }
+    }
+  }
+}
+
+.flat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background-color: var(--color-brand);
+  border: none;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+
+  font-family: inherit;
+  font-weight: lighter;
+  font-size: 36px;
+  color: var(--color-white);
+
+  cursor: pointer;
+}

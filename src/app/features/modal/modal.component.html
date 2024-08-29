@@ -1,0 +1,14 @@
+@if (isShown) {
+  <div class="overlay" (click)="isShown = !isShown"></div>
+  <form class="form" (ngSubmit)="submit()">
+    <h2>{{ "Новая задача" | uppercase }}</h2>
+    <input placeholder="Введите название задачи" type="text" [formControl]="title"/>
+    <div class="actions">
+      <button (click)="reset()" class="cancel" type="reset">{{ "Отмена"| uppercase }}</button>
+      <button class="apply" type="submit">{{ "Создать" | uppercase }}</button>
+    </div>
+  </form>
+} @else {
+  <button class="flat-btn" (click)="isShown = !isShown">+</button>
+}
+

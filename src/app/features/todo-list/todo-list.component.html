@@ -1,0 +1,11 @@
+<ng-container *ngIf="(todoListService.todoList | async) as list">
+  @if (list.length > 0) {
+    <ul class="list-wrapper">
+      @for (item of list; track item.id) {
+        <app-list-item [id]="item.id" [title]="item.todo" [checked]="item.completed"></app-list-item>
+      }
+    </ul>
+  } @else {
+    <p>No todos yet.</p>
+  }
+</ng-container>

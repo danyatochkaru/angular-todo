@@ -1,0 +1,106 @@
+:host:nth-last-of-type(1) {
+  .list-item {
+    border-bottom: none;
+  }
+}
+
+:host:has(.hide) {
+  display: none;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: 26px 1fr 60px;
+  align-items: start;
+  column-gap: 18px;
+
+  padding-block: 10px;
+  border-bottom: 1px solid var(--color-brand);
+
+  p {
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  form {
+    input {
+      padding: 4px;
+      background: inherit;
+      color: inherit;
+
+      width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+
+      border: 1px solid var(--color-white);
+      border-radius: 5px;
+    }
+
+    .error {
+      color: var(--color-red);
+      margin-top: 4px;
+      font-size: 12px;
+    }
+
+    &:has(.error) {
+      input {
+        border-color: var(--color-red);
+      }
+    }
+  }
+
+  .actions {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      background: inherit;
+      border: none;
+      cursor: pointer;
+
+      padding: 5px;
+
+      width: 30px;
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg path {
+      transition: all .3s;
+    }
+
+    .edit-btn :hover {
+      svg path {
+        stroke: var(--color-brand);
+      }
+    }
+
+    .delete-btn:hover {
+      svg path {
+        stroke: var(--color-red);
+      }
+    }
+
+    .save-btn:hover {
+      svg path {
+        stroke: var(--color-brand);
+      }
+    }
+
+    .close-btn:hover {
+      svg path {
+        stroke: var(--color-red);
+      }
+    }
+  }
+
+  &:hover {
+    .actions {
+      display: flex;
+    }
+  }
+}
